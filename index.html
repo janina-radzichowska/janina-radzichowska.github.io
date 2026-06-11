@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janina Radzichowska — Operations Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #ffffff; color: #1a1a1a; }
+.pf { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+.hero { padding: 2.5rem 0 2rem; margin-bottom: 2rem; border-bottom: 1px solid #e8e8e8; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #999; margin-bottom: 0.75rem; }
+.hero-name { font-size: 30px; font-weight: 500; color: #111; line-height: 1.15; margin-bottom: 0.5rem; }
+.hero-tagline { font-size: 15px; color: #555; margin-bottom: 1.4rem; line-height: 1.6; max-width: 480px; }
+.hero-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.3rem; }
+.hero-chip { font-size: 12px; padding: 4px 11px; border-radius: 20px; border: 1px solid #e0e0e0; color: #555; display: flex; align-items: center; gap: 6px; }
+.hero-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.hero-link { font-size: 13px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+.hero-link:hover { color: #111; }
+
+.book-btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; background: #fff; border: 1px solid #ccc; border-radius: 12px; font-size: 13px; font-weight: 500; color: #111; text-decoration: none; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; margin-top: 2px; }
+.book-btn:hover { background: #f5f5f5; }
+.book-pulse { width: 8px; height: 8px; border-radius: 50%; background: #1D9E75; flex-shrink: 0; }
+
+.sec-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
+
+.skills-block { margin-bottom: 2rem; }
+.skills-tabs { display: flex; gap: 6px; margin-bottom: 1.1rem; }
+.stab { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #e0e0e0; background: transparent; color: #666; cursor: pointer; transition: all 0.15s; }
+.stab:hover { color: #111; }
+.stab.active { background: #f0f0f0; color: #111; border-color: #ccc; }
+.spanel { display: none; }
+.spanel.active { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag { font-size: 13px; padding: 6px 12px; border-radius: 8px; border: 1px solid #e0e0e0; color: #555; background: #fff; display: flex; align-items: center; gap: 7px; transition: border-color 0.12s; }
+.skill-tag:hover { border-color: #bbb; color: #111; }
+.skill-tag.exp { background: #f7f7f7; }
+.lang-tag { font-size: 13px; padding: 7px 13px; border-radius: 8px; border: 1px solid #e0e0e0; color: #555; background: #fff; display: flex; align-items: center; gap: 9px; }
+.lang-level { font-size: 11px; color: #999; padding: 2px 7px; background: #f0f0f0; border-radius: 4px; margin-left: 2px; }
+
+hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
+
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.fbtn { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #e0e0e0; background: transparent; color: #666; cursor: pointer; transition: all 0.15s; }
+.fbtn:hover { color: #111; }
+.fbtn.active { background: #f0f0f0; color: #111; border-color: #ccc; }
+
+.cases-grid { border: 1px solid #e8e8e8; border-radius: 12px; overflow: hidden; }
+.cc { background: #fff; padding: 1.1rem 1.4rem; border-bottom: 1px solid #e8e8e8; cursor: pointer; transition: background 0.12s; }
+.cc:last-child { border-bottom: none; }
+.cc:hover { background: #fafafa; }
+.cc.open { background: #fafafa; }
+.ch { display: flex; align-items: flex-start; gap: 12px; }
+.ci { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ct { flex: 1; min-width: 0; }
+.ctitle { font-size: 14px; font-weight: 500; color: #111; margin-bottom: 2px; }
+.csub { font-size: 12px; color: #777; }
+.cr { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.badge { font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 500; }
+.b-ops { background: #E1F5EE; color: #0F6E56; }
+.b-hr  { background: #EEEDFE; color: #534AB7; }
+.b-fin { background: #FAEEDA; color: #854F0B; }
+.b-leg { background: #FAECE7; color: #993C1D; }
+.b-aut { background: #EAF3DE; color: #3B6D11; }
+.chev { font-size: 14px; color: #aaa; transition: transform 0.2s; }
+.cc.open .chev { transform: rotate(180deg); }
+
+.cd { display: none; padding: 1.1rem 0 0.25rem; border-top: 1px solid #e8e8e8; margin-top: 1rem; }
+.cc.open .cd { display: block; }
+.srow { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-bottom: 1.1rem; }
+.sb { background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; padding: 9px 12px; }
+.sl { font-size: 11px; color: #999; margin-bottom: 3px; }
+.sv { font-size: 14px; font-weight: 500; color: #111; }
+.dbody { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 1rem; }
+.olbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.5rem; }
+.oi { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #555; margin-bottom: 5px; line-height: 1.5; }
+.od { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.dtrow { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.8rem; }
+.dt { font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid #e0e0e0; color: #999; }
+
+.footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e8e8e8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.flink { font-size: 12px; color: #999; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+.flink:hover { color: #555; }
+
+@media (max-width:600px) {
+  .hero { flex-direction: column; }
+  .srow { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .book-btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="pf">
+
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Operations Portfolio</p>
+      <h1 class="hero-name">Janina Radzichowska</h1>
+      <p class="hero-tagline">Operations &amp; People Ops professional with a track record of delivering complex, cross-functional projects across global teams.</p>
+      <div class="hero-chips">
+        <span class="hero-chip"><i class="ti ti-award" style="font-size:12px;"></i>AgilePM Foundation</span>
+        <span class="hero-chip"><i class="ti ti-award" style="font-size:12px;"></i>AgileBA Foundation</span>
+      </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/janina-radzichowska" target="_blank" class="hero-link"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+        <a href="mailto:janina@radzichowska.com" class="hero-link"><i class="ti ti-mail"></i> Email</a>
+      </div>
+    </div>
+    <a href="https://zcal.co/j-radz" target="_blank" class="book-btn">
+      <span class="book-pulse"></span>
+      Book a call
+      <i class="ti ti-arrow-up-right" style="font-size:13px;color:#aaa;"></i>
+    </a>
+  </div>
+
+  <div class="skills-block">
+    <p class="sec-label">Skills</p>
+    <div class="skills-tabs">
+      <button class="stab active" onclick="switchTab('sw',this)">Software</button>
+      <button class="stab" onclick="switchTab('ex',this)">Expertise</button>
+      <button class="stab" onclick="switchTab('ln',this)">Languages</button>
+    </div>
+    <div class="spanel active" id="tab-sw">
+      <span class="skill-tag"><i class="ti ti-layout" style="font-size:14px;"></i>Notion</span>
+      <span class="skill-tag"><i class="ti ti-check" style="font-size:14px;"></i>ClickUp</span>
+      <span class="skill-tag"><i class="ti ti-messages" style="font-size:14px;"></i>Slack</span>
+      <span class="skill-tag"><i class="ti ti-bolt" style="font-size:14px;"></i>Zapier</span>
+      <span class="skill-tag"><i class="ti ti-circuit" style="font-size:14px;"></i>n8n</span>
+      <span class="skill-tag"><i class="ti ti-table" style="font-size:14px;"></i>Google Sheets</span>
+      <span class="skill-tag"><i class="ti ti-folder" style="font-size:14px;"></i>Google Drive</span>
+      <span class="skill-tag"><i class="ti ti-database" style="font-size:14px;"></i>Airtable</span>
+      <span class="skill-tag"><i class="ti ti-receipt" style="font-size:14px;"></i>QuickBooks</span>
+      <span class="skill-tag"><i class="ti ti-users" style="font-size:14px;"></i>Copper CRM</span>
+      <span class="skill-tag"><i class="ti ti-id" style="font-size:14px;"></i>Rippling</span>
+      <span class="skill-tag"><i class="ti ti-world" style="font-size:14px;"></i>Remote</span>
+      <span class="skill-tag"><i class="ti ti-calendar" style="font-size:14px;"></i>Luma</span>
+      <span class="skill-tag"><i class="ti ti-video" style="font-size:14px;"></i>Loom</span>
+      <span class="skill-tag"><i class="ti ti-user-check" style="font-size:14px;"></i>Ashby</span>
+    </div>
+    <div class="spanel" id="tab-ex">
+      <span class="skill-tag exp"><i class="ti ti-settings" style="font-size:14px;"></i>Operations</span>
+      <span class="skill-tag exp"><i class="ti ti-list-check" style="font-size:14px;"></i>Project Management</span>
+      <span class="skill-tag exp"><i class="ti ti-user-plus" style="font-size:14px;"></i>Recruitment &amp; Talent Acquisition</span>
+      <span class="skill-tag exp"><i class="ti ti-chart-bar" style="font-size:14px;"></i>Venture Capital &amp; Funds Ops</span>
+      <span class="skill-tag exp"><i class="ti ti-briefcase" style="font-size:14px;"></i>Investor Relations</span>
+      <span class="skill-tag exp"><i class="ti ti-robot" style="font-size:14px;"></i>Workflow Automation</span>
+      <span class="skill-tag exp"><i class="ti ti-users" style="font-size:14px;"></i>People Operations</span>
+      <span class="skill-tag exp"><i class="ti ti-plane" style="font-size:14px;"></i>Cross-border Logistics</span>
+      <span class="skill-tag exp"><i class="ti ti-refresh" style="font-size:14px;"></i>Change Management</span>
+      <span class="skill-tag exp"><i class="ti ti-layers" style="font-size:14px;"></i>Agile / Scrum</span>
+      <span class="skill-tag exp"><i class="ti ti-coin" style="font-size:14px;"></i>Payroll Administration</span>
+    </div>
+    <div class="spanel" id="tab-ln">
+      <span class="lang-tag">🇺🇸 English <span class="lang-level">C2</span></span>
+      <span class="lang-tag">🇵🇱 Polish <span class="lang-level">Native</span></span>
+      <span class="lang-tag">🇷🇺 Russian <span class="lang-level">Native</span></span>
+      <span class="lang-tag">🇺🇦 Ukrainian <span class="lang-level">C1</span></span>
+      <span class="lang-tag">🇩🇪 German <span class="lang-level">A2</span></span>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <p class="sec-label" style="margin-bottom:1rem;">9 case studies</p>
+  <div class="filter-row">
+    <button class="fbtn active" onclick="fc('all',this)">All</button>
+    <button class="fbtn" onclick="fc('ops',this)">Operations</button>
+    <button class="fbtn" onclick="fc('hr',this)">People &amp; HR</button>
+    <button class="fbtn" onclick="fc('fin',this)">Finance &amp; Payroll</button>
+    <button class="fbtn" onclick="fc('aut',this)">Automation</button>
+  </div>
+
+  <div class="cases-grid" id="cases">
+
+    <div class="cc" data-cat="hr" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#E1F5EE;"><i class="ti ti-world" style="font-size:17px;color:#0F6E56;"></i></div>
+        <div class="ct"><div class="ctitle">Asia-Pacific Developer Hiring</div><div class="csub">4 remote engineers · India &amp; Philippines · &lt;4 months</div></div>
+        <div class="cr"><span class="badge b-hr">People &amp; HR</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">&lt;4 months</div></div>
+          <div class="sb"><div class="sl">Hires made</div><div class="sv">4 engineers</div></div>
+          <div class="sb"><div class="sl">Scheduling overhead cut</div><div class="sv">~40%</div></div>
+        </div>
+        <div class="dbody">Owned end-to-end recruitment for senior backend engineers across India and the Philippines, coordinating with founders and technical leads across a 6–8 hour time zone gap. Introduced async Loom video updates to replace live syncs, cutting scheduling lead time by ~40%.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#1D9E75;"></span>4 engineers hired and onboarded fully remotely within 4 months</div>
+        <div class="oi"><span class="od" style="background:#1D9E75;"></span>Async Loom updates reduced scheduling overhead by ~40%</div>
+        <div class="oi"><span class="od" style="background:#1D9E75;"></span>Built repeatable hiring runbook used for subsequent APAC roles</div>
+        <div class="dtrow"><span class="dt">Ashby</span><span class="dt">Loom</span><span class="dt">Notion</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="ops" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#FAECE7;"><i class="ti ti-building" style="font-size:17px;color:#993C1D;"></i></div>
+        <div class="ct"><div class="ctitle">C-Corp + Subsidiary Setup</div><div class="csub">Delaware C-Corp &amp; Dubai Free Zone · dual-track Waterfall · 2 months</div></div>
+        <div class="cr"><span class="badge b-leg">Legal &amp; Ops</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">2 months</div></div>
+          <div class="sb"><div class="sl">Entities</div><div class="sv">2 jurisdictions</div></div>
+          <div class="sb"><div class="sl">Methodology</div><div class="sv">Dual-track Waterfall</div></div>
+        </div>
+        <div class="dbody">Led the legal and operational setup of a California-to-Delaware C-Corp conversion and a parallel Dubai Free Zone subsidiary launch. Coordinated legal counsel, corporate service providers, and banking relationships across two jurisdictions simultaneously.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#D85A30;"></span>Both entities fully operational within 2 months</div>
+        <div class="oi"><span class="od" style="background:#D85A30;"></span>Dual-track approach prevented sequential delays across jurisdictions</div>
+        <div class="oi"><span class="od" style="background:#D85A30;"></span>Compliance and banking checklists reused for future expansions</div>
+        <div class="dtrow"><span class="dt">Notion</span><span class="dt">ClickUp</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="ops" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#EEEDFE;"><i class="ti ti-chart-line" style="font-size:17px;color:#534AB7;"></i></div>
+        <div class="ct"><div class="ctitle">Founder Meetups, LP Research &amp; Portfolio Relations</div><div class="csub">7 Agile sprints · 6 global cities · 2 years</div></div>
+        <div class="cr"><span class="badge b-ops">Operations</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">2 years</div></div>
+          <div class="sb"><div class="sl">Cities</div><div class="sv">SF · NY · HK · Seoul · London · Dubai</div></div>
+          <div class="sb"><div class="sl">Sprints</div><div class="sv">7 Agile sprints</div></div>
+        </div>
+        <div class="dbody">Planned and executed a rolling programme of founder and LP events across 6 cities over 2 years in 7 Agile sprints. Audited 5 years of investment records, produced a structured LP prospect list, and built a portfolio relations workflow for ongoing communications.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#7F77DD;"></span>Events delivered across 6 cities with consistent quality and format</div>
+        <div class="oi"><span class="od" style="background:#7F77DD;"></span>5-year investment record audit completed; LP prospect list produced</div>
+        <div class="oi"><span class="od" style="background:#7F77DD;"></span>Repeatable portfolio relations playbook established</div>
+        <div class="dtrow"><span class="dt">Notion</span><span class="dt">Airtable</span><span class="dt">Luma</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="hr" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#E1F5EE;"><i class="ti ti-sitemap" style="font-size:17px;color:#0F6E56;"></i></div>
+        <div class="ct"><div class="ctitle">Operations Team Restructuring</div><div class="csub">30-person team → 5–6 accountable squads · 3 months</div></div>
+        <div class="cr"><span class="badge b-hr">People &amp; HR</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">3 months</div></div>
+          <div class="sb"><div class="sl">Team size</div><div class="sv">30 people</div></div>
+          <div class="sb"><div class="sl">Squads formed</div><div class="sv">5–6 squads</div></div>
+        </div>
+        <div class="dbody">Redesigned a flat 30-person operations team into focused squads, each with a designated accountable lead. Used RACI frameworks to clarify ownership and introduced Agile ceremonies to improve execution rhythm — delivered with zero operational downtime.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#1D9E75;"></span>Clear accountability established across all squads via RACI</div>
+        <div class="oi"><span class="od" style="background:#1D9E75;"></span>Agile ceremonies introduced; team velocity visibly improved</div>
+        <div class="oi"><span class="od" style="background:#1D9E75;"></span>Restructure completed with zero operational downtime</div>
+        <div class="dtrow"><span class="dt">Notion</span><span class="dt">ClickUp</span><span class="dt">Airtable</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="ops" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#FAEEDA;"><i class="ti ti-plane" style="font-size:17px;color:#854F0B;"></i></div>
+        <div class="ct"><div class="ctitle">Dubai Relocation Logistics</div><div class="csub">5 workers relocated · visas, housing &amp; setup · 2 months</div></div>
+        <div class="cr"><span class="badge b-ops">Operations</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">2 months</div></div>
+          <div class="sb"><div class="sl">Employees relocated</div><div class="sv">5 workers</div></div>
+          <div class="sb"><div class="sl">Coordination</div><div class="sv">Manila + Dubai</div></div>
+        </div>
+        <div class="dbody">Managed end-to-end relocation of 5 workers to Dubai covering work visa applications, accommodation sourcing, airport logistics, and settlement support. Coordinated in parallel with a Manila-based PM to handle local documentation while managing Dubai-side arrangements.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#BA7517;"></span>All 5 employees relocated and operational within 2 months</div>
+        <div class="oi"><span class="od" style="background:#BA7517;"></span>Zero visa delays; all documentation submitted ahead of deadline</div>
+        <div class="oi"><span class="od" style="background:#BA7517;"></span>Relocation checklist created and reused for future hires</div>
+        <div class="dtrow"><span class="dt">Notion</span><span class="dt">Loom</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="ops" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#EEEDFE;"><i class="ti ti-book" style="font-size:17px;color:#534AB7;"></i></div>
+        <div class="ct"><div class="ctitle">Investor Relations Handbook</div><div class="csub">Reusable LP &amp; angel comms playbook · 4 weeks</div></div>
+        <div class="cr"><span class="badge b-ops">Operations</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">4 weeks</div></div>
+          <div class="sb"><div class="sl">Output</div><div class="sv">Full IR playbook</div></div>
+          <div class="sb"><div class="sl">Reused across</div><div class="sv">3 fundraising rounds</div></div>
+        </div>
+        <div class="dbody">Designed and built a comprehensive investor relations playbook covering LP update cadences, angel communication templates, meeting prep checklists, and escalation protocols. Built in Notion for easy maintenance and handoff — adopted immediately by the founding team.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#7F77DD;"></span>Full playbook delivered in 4 weeks; adopted immediately</div>
+        <div class="oi"><span class="od" style="background:#7F77DD;"></span>LP updates moved from ad-hoc to structured quarterly cadence</div>
+        <div class="oi"><span class="od" style="background:#7F77DD;"></span>Templates reused across 3 subsequent fundraising rounds</div>
+        <div class="dtrow"><span class="dt">Notion</span><span class="dt">Airtable</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="hr" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#EAF3DE;"><i class="ti ti-user-check" style="font-size:17px;color:#3B6D11;"></i></div>
+        <div class="ct"><div class="ctitle">Remote Onboarding Automation</div><div class="csub">Notion + Zapier auto-provisioning on offer signing · 8 weeks</div></div>
+        <div class="cr"><span class="badge b-aut">Automation</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">8 weeks</div></div>
+          <div class="sb"><div class="sl">Admin time saved</div><div class="sv">~70% per hire</div></div>
+          <div class="sb"><div class="sl">Countries supported</div><div class="sv">12+</div></div>
+        </div>
+        <div class="dbody">Built a fully automated onboarding system using Notion as the central hub and Zapier to trigger provisioning the moment an offer letter was signed. New hires received tool access, an onboarding checklist, and a first-week schedule without manual ops intervention.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#639922;"></span>Zero-touch provisioning from offer signing to Day 1 access</div>
+        <div class="oi"><span class="od" style="background:#639922;"></span>Onboarding admin time reduced by ~70% per new hire</div>
+        <div class="oi"><span class="od" style="background:#639922;"></span>System scaled to 12+ countries without modification</div>
+        <div class="dtrow"><span class="dt">Notion</span><span class="dt">Zapier</span><span class="dt">Ashby</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="fin" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#FAEEDA;"><i class="ti ti-credit-card" style="font-size:17px;color:#854F0B;"></i></div>
+        <div class="ct"><div class="ctitle">Global Contractor Payroll Migration</div><div class="csub">Manual SWIFT → Rippling + Remote · zero missed payments · 3 months</div></div>
+        <div class="cr"><span class="badge b-fin">Finance</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Duration</div><div class="sv">3 months</div></div>
+          <div class="sb"><div class="sl">Missed payments</div><div class="sv">Zero</div></div>
+          <div class="sb"><div class="sl">Admin time cut</div><div class="sv">~60%</div></div>
+        </div>
+        <div class="dbody">Migrated global contractor payroll from a manual SWIFT-based process to an automated dual-platform setup: Rippling for US-based contractors, Remote for international. Managed a parallel-run period to ensure zero payment disruption and produced documentation for Finance to operate independently post-handoff.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#BA7517;"></span>Zero missed or delayed payments throughout the 3-month migration</div>
+        <div class="oi"><span class="od" style="background:#BA7517;"></span>Monthly payroll admin time cut by ~60%</div>
+        <div class="oi"><span class="od" style="background:#BA7517;"></span>Finance team fully self-sufficient post-handoff</div>
+        <div class="dtrow"><span class="dt">Rippling</span><span class="dt">Remote</span><span class="dt">Notion</span></div>
+      </div>
+    </div>
+
+    <div class="cc" data-cat="aut" onclick="tc(this)">
+      <div class="ch">
+        <div class="ci" style="background:#EAF3DE;"><i class="ti ti-robot" style="font-size:17px;color:#3B6D11;"></i></div>
+        <div class="ct"><div class="ctitle">AI-Driven Workflow Automation</div><div class="csub">n8n invoice automations · 93% accuracy · 15–20 hrs/month saved</div></div>
+        <div class="cr"><span class="badge b-aut">Automation</span><i class="ti ti-chevron-down chev"></i></div>
+      </div>
+      <div class="cd">
+        <div class="srow">
+          <div class="sb"><div class="sl">Time saved</div><div class="sv">15–20 hrs/mo</div></div>
+          <div class="sb"><div class="sl">Parallel test accuracy</div><div class="sv">93%</div></div>
+          <div class="sb"><div class="sl">Teams impacted</div><div class="sv">Sales · Finance · Ops</div></div>
+        </div>
+        <div class="dbody">Built n8n automation pipelines covering invoice follow-up sequences and recurring QuickBooks invoicing across Sales, Finance, and Ops. Ran parallel cycles against manual processes to validate 93% accuracy before full cutover, eliminating repetitive admin across three departments.</div>
+        <div class="olbl">Key outcomes</div>
+        <div class="oi"><span class="od" style="background:#639922;"></span>93% accuracy confirmed before cutover via parallel testing</div>
+        <div class="oi"><span class="od" style="background:#639922;"></span>15–20 hours of manual admin eliminated per month</div>
+        <div class="oi"><span class="od" style="background:#639922;"></span>Invoice follow-up cycle reduced from weekly manual task to automated triggers</div>
+        <div class="dtrow"><span class="dt">n8n</span><span class="dt">QuickBooks</span><span class="dt">Zapier</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
+      <a href="https://www.linkedin.com/in/janina-radzichowska" target="_blank" class="flink"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a href="https://zcal.co/j-radz" target="_blank" class="flink"><i class="ti ti-calendar"></i> Book a call</a>
+    </div>
+    <p style="font-size:12px;color:#aaa;">AgilePM Foundation · AgileBA Foundation · MSc Business Management (in progress)</p>
+  </div>
+
+</div>
+
+<script>
+function tc(card) {
+  const was = card.classList.contains('open');
+  document.querySelectorAll('.cc.open').forEach(c => c.classList.remove('open'));
+  if (!was) card.classList.add('open');
+}
+function fc(cat, btn) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.cc').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+}
+function switchTab(tab, btn) {
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.spanel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+</script>
+</body>
+</html>
