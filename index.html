@@ -7,81 +7,81 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #ffffff; color: #1a1a1a; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #111111; color: #e8e8e8; }
 .pf { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
 
-.hero { padding: 2.5rem 0 2rem; margin-bottom: 2rem; border-bottom: 1px solid #e8e8e8; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
-.hero-eyebrow { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #999; margin-bottom: 0.75rem; }
-.hero-name { font-size: 30px; font-weight: 500; color: #111; line-height: 1.15; margin-bottom: 0.5rem; }
-.hero-tagline { font-size: 15px; color: #555; margin-bottom: 1.4rem; line-height: 1.6; max-width: 480px; }
+.hero { padding: 2.5rem 0 2rem; margin-bottom: 2rem; border-bottom: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #666666; margin-bottom: 0.75rem; }
+.hero-name { font-size: 30px; font-weight: 500; color: #f0f0f0; line-height: 1.15; margin-bottom: 0.5rem; }
+.hero-tagline { font-size: 15px; color: #aaaaaa; margin-bottom: 1.4rem; line-height: 1.6; max-width: 480px; }
 .hero-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.3rem; }
-.hero-chip { font-size: 12px; padding: 4px 11px; border-radius: 20px; border: 1px solid #e0e0e0; color: #555; display: flex; align-items: center; gap: 6px; }
+.hero-chip { font-size: 12px; padding: 4px 11px; border-radius: 20px; border: 1px solid #2a2a2a; color: #aaaaaa; display: flex; align-items: center; gap: 6px; }
 .hero-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-.hero-link { font-size: 13px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 5px; }
-.hero-link:hover { color: #111; }
+.hero-link { font-size: 13px; color: #aaaaaa; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+.hero-link:hover { color: #f0f0f0; }
 
-.book-btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; background: #fff; border: 1px solid #ccc; border-radius: 12px; font-size: 13px; font-weight: 500; color: #111; text-decoration: none; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; margin-top: 2px; }
-.book-btn:hover { background: #f5f5f5; }
+.book-btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; background: #1a1a1a; border: 1px solid #3a3a3a; border-radius: 12px; font-size: 13px; font-weight: 500; color: #f0f0f0; text-decoration: none; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; margin-top: 2px; }
+.book-btn:hover { background: #2a2a2a; }
 .book-pulse { width: 8px; height: 8px; border-radius: 50%; background: #1D9E75; flex-shrink: 0; }
 
-.sec-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
+.sec-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #666666; margin-bottom: 1rem; }
 
 .skills-block { margin-bottom: 2rem; }
 .skills-tabs { display: flex; gap: 6px; margin-bottom: 1.1rem; }
-.stab { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #e0e0e0; background: transparent; color: #666; cursor: pointer; transition: all 0.15s; }
-.stab:hover { color: #111; }
-.stab.active { background: #f0f0f0; color: #111; border-color: #ccc; }
+.stab { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #999999; cursor: pointer; transition: all 0.15s; }
+.stab:hover { color: #f0f0f0; }
+.stab.active { background: #2a2a2a; color: #f0f0f0; border-color: #3a3a3a; }
 .spanel { display: none; }
 .spanel.active { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-tag { font-size: 13px; padding: 6px 12px; border-radius: 8px; border: 1px solid #e0e0e0; color: #555; background: #fff; display: flex; align-items: center; gap: 7px; transition: border-color 0.12s; }
-.skill-tag:hover { border-color: #bbb; color: #111; }
-.skill-tag.exp { background: #f7f7f7; }
-.lang-tag { font-size: 13px; padding: 7px 13px; border-radius: 8px; border: 1px solid #e0e0e0; color: #555; background: #fff; display: flex; align-items: center; gap: 9px; }
-.lang-level { font-size: 11px; color: #999; padding: 2px 7px; background: #f0f0f0; border-radius: 4px; margin-left: 2px; }
+.skill-tag { font-size: 13px; padding: 6px 12px; border-radius: 8px; border: 1px solid #2a2a2a; color: #aaaaaa; background: #1a1a1a; display: flex; align-items: center; gap: 7px; transition: border-color 0.12s; }
+.skill-tag:hover { border-color: #bbb; color: #f0f0f0; }
+.skill-tag.exp { background: #222222; }
+.lang-tag { font-size: 13px; padding: 7px 13px; border-radius: 8px; border: 1px solid #2a2a2a; color: #aaaaaa; background: #1a1a1a; display: flex; align-items: center; gap: 9px; }
+.lang-level { font-size: 11px; color: #666666; padding: 2px 7px; background: #2a2a2a; border-radius: 4px; margin-left: 2px; }
 
-hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
+hr.div { border: none; border-top: 1px solid #2a2a2a; margin: 2rem 0; }
 
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-.fbtn { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #e0e0e0; background: transparent; color: #666; cursor: pointer; transition: all 0.15s; }
-.fbtn:hover { color: #111; }
-.fbtn.active { background: #f0f0f0; color: #111; border-color: #ccc; }
+.fbtn { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #999999; cursor: pointer; transition: all 0.15s; }
+.fbtn:hover { color: #f0f0f0; }
+.fbtn.active { background: #2a2a2a; color: #f0f0f0; border-color: #3a3a3a; }
 
-.cases-grid { border: 1px solid #e8e8e8; border-radius: 12px; overflow: hidden; }
-.cc { background: #fff; padding: 1.1rem 1.4rem; border-bottom: 1px solid #e8e8e8; cursor: pointer; transition: background 0.12s; }
+.cases-grid { border: 1px solid #2a2a2a; border-radius: 12px; overflow: hidden; }
+.cc { background: #1a1a1a; padding: 1.1rem 1.4rem; border-bottom: 1px solid #2a2a2a; cursor: pointer; transition: background 0.12s; }
 .cc:last-child { border-bottom: none; }
-.cc:hover { background: #fafafa; }
-.cc.open { background: #fafafa; }
+.cc:hover { background: #222222; }
+.cc.open { background: #222222; }
 .ch { display: flex; align-items: flex-start; gap: 12px; }
 .ci { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .ct { flex: 1; min-width: 0; }
-.ctitle { font-size: 14px; font-weight: 500; color: #111; margin-bottom: 2px; }
-.csub { font-size: 12px; color: #777; }
+.ctitle { font-size: 14px; font-weight: 500; color: #f0f0f0; margin-bottom: 2px; }
+.csub { font-size: 12px; color: #888888; }
 .cr { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .badge { font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 500; }
-.b-ops { background: #E1F5EE; color: #0F6E56; }
-.b-hr  { background: #EEEDFE; color: #534AB7; }
-.b-fin { background: #FAEEDA; color: #854F0B; }
-.b-leg { background: #FAECE7; color: #993C1D; }
-.b-aut { background: #EAF3DE; color: #3B6D11; }
-.chev { font-size: 14px; color: #aaa; transition: transform 0.2s; }
+.b-ops { background: #0a2e22; color: #5DCAA5; }
+.b-hr  { background: #1e1b3a; color: #AFA9EC; }
+.b-fin { background: #2e2210; color: #EF9F27; }
+.b-leg { background: #2e1810; color: #F0997B; }
+.b-aut { background: #182e10; color: #97C459; }
+.chev { font-size: 14px; color: #555555; transition: transform 0.2s; }
 .cc.open .chev { transform: rotate(180deg); }
 
-.cd { display: none; padding: 1.1rem 0 0.25rem; border-top: 1px solid #e8e8e8; margin-top: 1rem; }
+.cd { display: none; padding: 1.1rem 0 0.25rem; border-top: 1px solid #2a2a2a; margin-top: 1rem; }
 .cc.open .cd { display: block; }
 .srow { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-bottom: 1.1rem; }
-.sb { background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; padding: 9px 12px; }
-.sl { font-size: 11px; color: #999; margin-bottom: 3px; }
-.sv { font-size: 14px; font-weight: 500; color: #111; }
-.dbody { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 1rem; }
-.olbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.5rem; }
-.oi { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #555; margin-bottom: 5px; line-height: 1.5; }
+.sb { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 9px 12px; }
+.sl { font-size: 11px; color: #666666; margin-bottom: 3px; }
+.sv { font-size: 14px; font-weight: 500; color: #f0f0f0; }
+.dbody { font-size: 13px; color: #aaaaaa; line-height: 1.7; margin-bottom: 1rem; }
+.olbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #666666; margin-bottom: 0.5rem; }
+.oi { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #aaaaaa; margin-bottom: 5px; line-height: 1.5; }
 .od { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
 .dtrow { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.8rem; }
-.dt { font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid #e0e0e0; color: #999; }
+.dt { font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid #2a2a2a; color: #666666; }
 
-.footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e8e8e8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.flink { font-size: 12px; color: #999; text-decoration: none; display: flex; align-items: center; gap: 5px; }
-.flink:hover { color: #555; }
+.footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.flink { font-size: 12px; color: #666666; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+.flink:hover { color: #aaaaaa; }
 
 @media (max-width:600px) {
   .hero { flex-direction: column; }
@@ -175,7 +175,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="hr" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#E1F5EE;"><i class="ti ti-world" style="font-size:17px;color:#0F6E56;"></i></div>
+        <div class="ci" style="background:#0a2e22;"><i class="ti ti-world" style="font-size:17px;color:#0F6E56;"></i></div>
         <div class="ct"><div class="ctitle">Asia-Pacific Developer Hiring</div><div class="csub">4 remote engineers · India &amp; Philippines · &lt;4 months</div></div>
         <div class="cr"><span class="badge b-hr">People &amp; HR</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -196,7 +196,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="ops" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#FAECE7;"><i class="ti ti-building" style="font-size:17px;color:#993C1D;"></i></div>
+        <div class="ci" style="background:#2e1810;"><i class="ti ti-building" style="font-size:17px;color:#993C1D;"></i></div>
         <div class="ct"><div class="ctitle">C-Corp + Subsidiary Setup</div><div class="csub">Delaware C-Corp &amp; Dubai Free Zone · dual-track Waterfall · 2 months</div></div>
         <div class="cr"><span class="badge b-leg">Legal &amp; Ops</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -217,7 +217,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="ops" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#EEEDFE;"><i class="ti ti-chart-line" style="font-size:17px;color:#534AB7;"></i></div>
+        <div class="ci" style="background:#1e1b3a;"><i class="ti ti-chart-line" style="font-size:17px;color:#534AB7;"></i></div>
         <div class="ct"><div class="ctitle">Founder Meetups, LP Research &amp; Portfolio Relations</div><div class="csub">7 Agile sprints · 6 global cities · 2 years</div></div>
         <div class="cr"><span class="badge b-ops">Operations</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -238,7 +238,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="hr" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#E1F5EE;"><i class="ti ti-sitemap" style="font-size:17px;color:#0F6E56;"></i></div>
+        <div class="ci" style="background:#0a2e22;"><i class="ti ti-sitemap" style="font-size:17px;color:#0F6E56;"></i></div>
         <div class="ct"><div class="ctitle">Operations Team Restructuring</div><div class="csub">30-person team → 5–6 accountable squads · 3 months</div></div>
         <div class="cr"><span class="badge b-hr">People &amp; HR</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -259,7 +259,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="ops" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#FAEEDA;"><i class="ti ti-plane" style="font-size:17px;color:#854F0B;"></i></div>
+        <div class="ci" style="background:#2e2210;"><i class="ti ti-plane" style="font-size:17px;color:#854F0B;"></i></div>
         <div class="ct"><div class="ctitle">Dubai Relocation Logistics</div><div class="csub">5 workers relocated · visas, housing &amp; setup · 2 months</div></div>
         <div class="cr"><span class="badge b-ops">Operations</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -280,7 +280,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="ops" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#EEEDFE;"><i class="ti ti-book" style="font-size:17px;color:#534AB7;"></i></div>
+        <div class="ci" style="background:#1e1b3a;"><i class="ti ti-book" style="font-size:17px;color:#534AB7;"></i></div>
         <div class="ct"><div class="ctitle">Investor Relations Handbook</div><div class="csub">Reusable LP &amp; angel comms playbook · 4 weeks</div></div>
         <div class="cr"><span class="badge b-ops">Operations</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -301,7 +301,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="hr" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#EAF3DE;"><i class="ti ti-user-check" style="font-size:17px;color:#3B6D11;"></i></div>
+        <div class="ci" style="background:#182e10;"><i class="ti ti-user-check" style="font-size:17px;color:#3B6D11;"></i></div>
         <div class="ct"><div class="ctitle">Remote Onboarding Automation</div><div class="csub">Notion + Zapier auto-provisioning on offer signing · 8 weeks</div></div>
         <div class="cr"><span class="badge b-aut">Automation</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -322,7 +322,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="fin" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#FAEEDA;"><i class="ti ti-credit-card" style="font-size:17px;color:#854F0B;"></i></div>
+        <div class="ci" style="background:#2e2210;"><i class="ti ti-credit-card" style="font-size:17px;color:#854F0B;"></i></div>
         <div class="ct"><div class="ctitle">Global Contractor Payroll Migration</div><div class="csub">Manual SWIFT → Rippling + Remote · zero missed payments · 3 months</div></div>
         <div class="cr"><span class="badge b-fin">Finance</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
@@ -343,7 +343,7 @@ hr.div { border: none; border-top: 1px solid #e8e8e8; margin: 2rem 0; }
 
     <div class="cc" data-cat="aut" onclick="tc(this)">
       <div class="ch">
-        <div class="ci" style="background:#EAF3DE;"><i class="ti ti-robot" style="font-size:17px;color:#3B6D11;"></i></div>
+        <div class="ci" style="background:#182e10;"><i class="ti ti-robot" style="font-size:17px;color:#3B6D11;"></i></div>
         <div class="ct"><div class="ctitle">AI-Driven Workflow Automation</div><div class="csub">n8n invoice automations · 93% accuracy · 15–20 hrs/month saved</div></div>
         <div class="cr"><span class="badge b-aut">Automation</span><i class="ti ti-chevron-down chev"></i></div>
       </div>
